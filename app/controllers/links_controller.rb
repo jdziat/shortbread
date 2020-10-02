@@ -7,7 +7,7 @@ class LinksController < ApplicationController
   end
 
   def retrieve
-    if @link = Link.find_by(short_url: params[:unknown])
+    if @link = Link.find_by(:short_url => params[:unknown])
       forward(@link)
     else
       redirect_to root_path
@@ -34,10 +34,10 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       if @link.save
-        format.html { redirect_to link_path(@link), notice: 'Link was successfully created.' }
+        format.html { redirect_to link_path(@link), :notice => 'Link was successfully created.' }
         format.json
       else
-        format.html { render action: 'new' }
+        format.html { render :action => 'new' }
         format.json { render :json => { :error => @link.errors.full_messages }, :status => 422 }
       end
     end
