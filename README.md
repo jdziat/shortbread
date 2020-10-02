@@ -48,7 +48,7 @@ rspec
 
 Tools:
  - [packer](https://www.packer.io/)
- - [docker](https://www.packer.io/)
+ - [docker](https://www.docker.com/get-started)
  
 
 ```sh
